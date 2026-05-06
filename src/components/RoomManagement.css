@@ -1,0 +1,327 @@
+.room-management {
+    padding: 1rem 0;
+}
+
+.room-management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.room-management-header h2 {
+    margin: 0;
+}
+
+.room-form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.room-form {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.room-form h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.room-form label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.room-form input,
+.room-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background);
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.room-form input:focus,
+.room-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(102, 51, 153, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.room-card {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.room-header h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.room-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-small {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn-edit {
+    background: #4ecdc4;
+    color: white;
+}
+
+.btn-delete {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btn-small:hover {
+    opacity: 0.9;
+}
+
+.room-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.room-capacity-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.room-type {
+    background: var(--accent-light);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.room-price {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.beds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 0.75rem;
+}
+
+.bed {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    color: white;
+}
+
+.bed small {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    opacity: 0.9;
+}
+
+.bed:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bed-available {
+    background: linear-gradient(135deg, #00c49f 0%, #00a282 100%);
+}
+
+.bed-available:hover {
+    background: linear-gradient(135deg, #00d4ab 0%, #00b394 100%);
+}
+
+.bed-occupied {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.bed-occupied:hover {
+    background: linear-gradient(135deg, #ff7f7f 0%, #ff6262 100%);
+}
+
+.bed-selected {
+    background: linear-gradient(135deg, #4d8bfd 0%, #3a6bcb 100%);
+}
+
+.bed-booked {
+    background: linear-gradient(135deg, #4d8bfd 0%, #3a6bcb 100%);
+}
+
+.bed-booked:hover {
+    background: linear-gradient(135deg, #5d9bff 0%, #497be0 100%);
+}
+
+.bed-selected:hover {
+    background: linear-gradient(135deg, #5d9bff 0%, #497be0 100%);
+}
+
+.legend {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .beds-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-management-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .room-management-header button {
+        width: 100%;
+    }
+
+    .room-form-modal {
+        align-items: flex-end;
+        padding: 0.5rem;
+    }
+
+    .room-form {
+        width: 100%;
+        max-height: 92vh;
+        overflow-y: auto;
+        padding: 1rem;
+    }
+
+    .form-actions,
+    .legend,
+    .room-info,
+    .room-capacity-info {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .beds-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .room-card {
+        padding: 1rem;
+    }
+
+    .room-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .room-actions {
+        width: 100%;
+    }
+
+    .room-actions button {
+        flex: 1;
+    }
+}

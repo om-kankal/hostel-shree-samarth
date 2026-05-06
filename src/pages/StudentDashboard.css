@@ -1,0 +1,197 @@
+.student-dashboard {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.student-dashboard-header,
+.allocation-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.allocation-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+}
+
+.allocation-summary div {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.allocation-summary span {
+    color: var(--text-muted);
+}
+
+.fees-section {
+    display: grid;
+    gap: 1rem;
+}
+
+.fees-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fees-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.fees-header span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.fees-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.fees-summary div {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+}
+
+.fees-summary span {
+    color: var(--text-muted);
+}
+
+.fees-table-wrap {
+    overflow-x: auto;
+}
+
+.fees-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fees-table th,
+.fees-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.fees-table th {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.student-profile-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-section {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-section h2 {
+    font-size: 1.2rem;
+}
+
+.student-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.student-form-grid label {
+    display: grid;
+    gap: 0.5rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.student-form-grid input,
+.student-form-grid select,
+.student-form-grid textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background: var(--bg-color);
+    color: var(--text-main);
+    font: inherit;
+}
+
+.student-form-grid input[readonly] {
+    color: var(--text-muted);
+    background: var(--bg-secondary, rgba(148, 163, 184, 0.08));
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.student-save-btn {
+    justify-self: end;
+}
+
+.student-locked {
+    max-width: 720px;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .student-dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .student-dashboard-header .btn {
+        width: 100%;
+    }
+
+    .allocation-summary,
+    .fees-summary,
+    .student-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .span-2 {
+        grid-column: span 1;
+    }
+
+    .student-save-btn {
+        justify-self: stretch;
+    }
+
+    .fees-table-wrap {
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section,
+    .fees-section,
+    .allocation-summary {
+        padding: 1rem;
+    }
+
+    .student-form-grid input,
+    .student-form-grid select,
+    .student-form-grid textarea {
+        padding: 0.7rem;
+    }
+
+    .fees-table th,
+    .fees-table td {
+        padding: 0.65rem;
+    }
+}

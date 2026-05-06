@@ -1,0 +1,148 @@
+.gallery-section {
+    background-color: var(--surface);
+    /* Dark teal background to match reference */
+    min-height: calc(100vh - 72px);
+    padding: 4rem 0;
+    color: var(--text-main);
+}
+
+.gallery-main-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.checkerboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-block {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 350px;
+}
+
+.image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-block:hover img {
+    transform: scale(1.05);
+}
+
+.text-block {
+    background-color: var(--bg-color);
+    /* Slightly lighter box */
+    padding: 2rem;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease;
+    border: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.text-block::-webkit-scrollbar {
+    width: 6px;
+}
+
+.text-block::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.text-block::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.text-block:hover {
+    background-color: var(--surface-hover);
+}
+
+.block-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.block-content {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    opacity: 0.9;
+    flex: 1;
+}
+
+.block-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reviewer-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #CBD5E1;
+    background-image: url('https://ui-avatars.com/api/?name=U&background=random');
+    background-size: cover;
+}
+
+.reviewer-name {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.stars {
+    display: flex;
+    color: var(--accent);
+    /* Accent coloring for stars */
+    gap: 2px;
+}
+
+@media (max-width: 1200px) {
+    .checkerboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .checkerboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-block {
+        height: 300px;
+    }
+
+    /* Make images taller on mobile so they aren't squished */
+    .image-block img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .block-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

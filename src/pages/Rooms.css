@@ -1,0 +1,89 @@
+.pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.pricing-card.popular {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+}
+
+.check-icon {
+    color: var(--success);
+    flex-shrink: 0;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        gap: 1rem;
+    }
+
+    .pricing-card {
+        flex-basis: 100%;
+        min-width: 0;
+    }
+
+    .pricing-card.popular {
+        transform: none;
+    }
+
+    .pricing-card .price {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+        overflow-wrap: anywhere;
+    }
+}
